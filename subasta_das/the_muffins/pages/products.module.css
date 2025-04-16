@@ -1,0 +1,75 @@
+/* styles/products.module.css */
+
+.navLeft, .navCenter, .navRight {
+    display: flex;
+    align-items: center;
+}
+
+.navCenter {
+    justify-content: center;
+}
+
+.logo {
+    max-height: 80px;
+    cursor: pointer;
+}
+
+.searchContainer {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+}
+
+.productosGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.productoCard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.productoCard img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;  
+}
+
+.productoNombre {
+    margin-top: 10px;
+}
+
+.customFooter {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.customButton {
+    background-color: #531517;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.customButton:hover {
+    background-color: #f15f79;
+}
+
+.loadingMessage {
+    text-align: center;
+    font-size: 1rem;   /* Letra más pequeña */
+    padding: 2rem;
+    color: #000;       /* Color negro */
+}

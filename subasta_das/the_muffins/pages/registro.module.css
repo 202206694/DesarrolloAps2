@@ -1,0 +1,90 @@
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    background: linear-gradient(to right, #6e2e31, #be5f5f); 
+}
+
+.header {
+    background: white;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.formContainer {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px; 
+    margin: auto; 
+}
+
+.navCenter {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    max-height: 80px;
+    cursor: pointer;
+}
+
+.customInput, .customSelect, .customButton {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%; 
+}
+
+.customButton {
+    background-color: #531517;
+    color: white;
+    cursor: pointer;
+}
+
+.customButton:hover {
+    background-color: #f15f79;
+}
+
+.btnBack {
+    background: none;
+    border: 2px solid #b24592;
+    color: #b24592;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btnBack:hover {
+    background-color: #b24592;
+    color: white;
+}
+
+.customFooter {
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: relative;
+    width: 100%;
+}
+
+.link {
+    color: rgb(32, 81, 155);
+}
+
+.error {
+    color: red; 
+    margin-top: 5px;
+}

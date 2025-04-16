@@ -1,0 +1,27 @@
+/* perfilUsuario.module.css */
+.container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.info {
+    font-size: 18px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.error {
+    color: red;
+    font-size: 18px;
+}

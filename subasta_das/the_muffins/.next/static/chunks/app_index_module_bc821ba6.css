@@ -1,0 +1,48 @@
+/* [project]/app/index.module.css [app-client] (css) */
+.index-module__vbPTMW__hero {
+  background: url("/images/inicio.png") center / cover no-repeat;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.index-module__vbPTMW__overlay {
+  background: #00000080;
+  padding: 20px;
+  color: #fff;
+  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 10px;
+}
+
+.index-module__vbPTMW__gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+  position: relative;
+}
+
+.index-module__vbPTMW__gallery img {
+  width: 60%;
+  height: auto;
+}
+
+.index-module__vbPTMW__galleryText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 18px;
+  color: #fff;
+  background: #0009;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 10;
+}
+
+
+/*# sourceMappingURL=app_index_module_bc821ba6.css.map*/

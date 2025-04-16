@@ -1,0 +1,136 @@
+/* [project]/pages/perfilUsuario.module.css [client] (css) */
+.perfilUsuario-module__xn26ja__container {
+  background-color: #f8f8f8;
+  padding: 40px;
+  min-height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Segoe UI, sans-serif;
+}
+
+.perfilUsuario-module__xn26ja__title {
+  font-size: 28px;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #531517;
+}
+
+.perfilUsuario-module__xn26ja__info {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #444;
+}
+
+.perfilUsuario-module__xn26ja__buttonGroup {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perfilUsuario-module__xn26ja__customButton, .perfilUsuario-module__xn26ja__logoutButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.perfilUsuario-module__xn26ja__customButton {
+  background-color: #531517;
+  color: #fff;
+}
+
+.perfilUsuario-module__xn26ja__customButton:hover {
+  background-color: #b24592;
+}
+
+.perfilUsuario-module__xn26ja__logoutButton {
+  background-color: #a83232;
+  color: #fff;
+}
+
+.perfilUsuario-module__xn26ja__logoutButton:hover {
+  background-color: #e04848;
+}
+
+.perfilUsuario-module__xn26ja__passwordSection {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #0000001a;
+}
+
+.perfilUsuario-module__xn26ja__passwordForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.perfilUsuario-module__xn26ja__passwordInput {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.perfilUsuario-module__xn26ja__error {
+  color: #e04848;
+  font-size: 14px;
+}
+
+.perfilUsuario-module__xn26ja__success {
+  color: green;
+  font-size: 14px;
+}
+
+.perfilUsuario-module__xn26ja__loading {
+  font-size: 16px;
+  color: #555;
+  margin-top: 40px;
+}
+
+.perfilUsuario-module__xn26ja__productList {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.perfilUsuario-module__xn26ja__productItem {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px #0000001a;
+  text-align: center;
+}
+
+.perfilUsuario-module__xn26ja__productImage {
+  max-width: 100%;
+  border-radius: 8px;
+  height: auto;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.perfilUsuario-module__xn26ja__productItem p {
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.perfilUsuario-module__xn26ja__listado {
+  width: 100%;
+  max-width: 900px;
+}
+
+/*# sourceMappingURL=pages_perfilUsuario_module_73511378.css.map*/

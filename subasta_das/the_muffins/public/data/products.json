@@ -1,0 +1,122 @@
+{
+    "productos": [
+      {
+        "id": 1,
+        "nombre": "Anillo de oro con rubí",
+        "categoria": "Anillos",
+        "imagen": "anillo_minimalista.png",
+        "descripcion": "Elegante anillo de oro con único rubí minimalista.",
+        "subasta_actual": "500€",
+        "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 2,
+          "nombre": "Anillo de oro con cuarzo rosa",
+          "categoria": "Anillos",
+          "imagen": "anillo.png",
+          "descripcion": "Elegante anillo de oro con relieves y cuarzo rosa.",
+          "subasta_actual": "450€",
+          "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 3,
+          "nombre": "Collar de flores",
+          "categoria": "Collares",
+          "imagen": "collar_flores.png",
+          "descripcion": "Collar de oro con diseño de flores.",
+          "subasta_actual": "800€",
+          "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 4,
+          "nombre": "Collar maximalista",
+          "categoria": "Collares",
+          "imagen": "collar_grande.png",
+          "descripcion": "Collar de oro de sieño maximalista con diamantes.",
+          "subasta_actual": "1000€",
+          "finaliza": "28 Feb 2025"
+      },
+  
+      {
+        "id": 5,
+        "nombre": "Collar de perlas",
+        "categoria": "Collares",
+        "imagen": "collar.png",
+        "descripcion": "Collar tradicional de perlas naturales.",
+        "subasta_actual": "800€",
+        "finaliza": "28 Feb 2025"
+      },
+  
+      {
+        "id": 6,
+        "nombre": "Pendientes de oro blanco",
+        "categoria": "Pendientes",
+        "imagen": "pendientes_hojas.png",
+        "descripcion": "Pendientes elegantes de oro blanco con diseño de hojas.",
+        "subasta_actual": "600€",
+        "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 7,
+          "nombre": "Pendientes largos de oro",
+          "categoria": "Pendientes",
+          "imagen": "pendientes_redondos.png",
+          "descripcion": "Pendientes largos de oro con diseño complejo.",
+          "subasta_actual": "700€",
+          "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 8,
+          "nombre": "Pendientes de oro minimalistas",
+          "categoria": "Pendientes",
+          "imagen": "pendientes.png",
+          "descripcion": "Pendientes elegantes de oro con diseño minimalista.",
+          "subasta_actual": "300€",
+          "finaliza": "28 Feb 2025"
+      },
+        
+      {
+        "id": 9,
+        "nombre": "Reloj de oro minimalista",
+        "categoria": "Relojes",
+        "imagen": "reloj_relieve.png",
+        "descripcion": "Reloj de oro de estilo minimalista.",
+        "subasta_actual": "1000€",
+        "finaliza": "28 Feb 2025"
+      },
+  
+      {
+          "id": 10,
+          "nombre": "Reloj de piel granate",
+          "categoria": "Relojes",
+          "imagen": "reloj.png",
+          "descripcion": "Reloj de oro con pulsera de piel en color granate.",
+          "subasta_actual": "3000€",
+          "finaliza": "28 Feb 2025"
+      },
+  
+      {
+        "id": 11,
+        "nombre": "Pulsera de oro con detalles tradicionales",
+        "categoria": "Pulseras",
+        "imagen": "pulsera_detalles.png",
+        "descripcion": "Pulsera de oro con motivo tradicional.",
+        "subasta_actual": "1200€",
+        "finaliza": "28 Feb 2025"
+      },
+      {
+          "id": 12,
+          "nombre": "Pulsera de oro con detalles bohemios",
+          "categoria": "Pulseras",
+          "imagen": "pulsera_relieve.png",
+          "descripcion": "Pulsera de oro con diseño bohemio.",
+          "subasta_actual": "1200€",
+          "finaliza": "28 Feb 2025"
+      }
+    ]
+  }

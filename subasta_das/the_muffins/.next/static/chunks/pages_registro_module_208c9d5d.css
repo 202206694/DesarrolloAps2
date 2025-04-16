@@ -1,0 +1,94 @@
+/* [project]/pages/registro.module.css [client] (css) */
+.registro-module__TLiRYq__pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #6e2e31, #be5f5f);
+}
+
+.registro-module__TLiRYq__header {
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px #0000001a;
+  width: 100%;
+}
+
+.registro-module__TLiRYq__formContainer {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #0003;
+  text-align: center;
+  width: 400px;
+  margin: auto;
+}
+
+.registro-module__TLiRYq__navCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.registro-module__TLiRYq__logo {
+  max-height: 80px;
+  cursor: pointer;
+}
+
+.registro-module__TLiRYq__customInput, .registro-module__TLiRYq__customSelect, .registro-module__TLiRYq__customButton {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.registro-module__TLiRYq__customButton {
+  background-color: #531517;
+  color: #fff;
+  cursor: pointer;
+}
+
+.registro-module__TLiRYq__customButton:hover {
+  background-color: #f15f79;
+}
+
+.registro-module__TLiRYq__btnBack {
+  background: none;
+  border: 2px solid #b24592;
+  color: #b24592;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 15px;
+  transition: all .3s;
+}
+
+.registro-module__TLiRYq__btnBack:hover {
+  background-color: #b24592;
+  color: #fff;
+}
+
+.registro-module__TLiRYq__customFooter {
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: relative;
+  width: 100%;
+}
+
+.registro-module__TLiRYq__link {
+  color: #20519b;
+}
+
+.registro-module__TLiRYq__error {
+  color: red;
+  margin-top: 5px;
+}
+
+
+/*# sourceMappingURL=pages_registro_module_208c9d5d.css.map*/

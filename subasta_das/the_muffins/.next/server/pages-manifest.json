@@ -1,0 +1,8 @@
+{
+  "/_app": "pages/_app.js",
+  "/_document": "pages/_document.js",
+  "/products": "pages/products.js",
+  "/perfilUsuario": "pages/perfilUsuario.js",
+  "/createauction": "pages/createauction.js",
+  "/productDetail": "pages/productDetail.js"
+}

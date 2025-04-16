@@ -1,0 +1,124 @@
+/* [project]/pages/login.module.css [client] (css) */
+.login-module__lgJPRG__pageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 100px);
+  background-color: #f8f8f8;
+}
+
+.login-module__lgJPRG__header {
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px #0000001a;
+}
+
+.login-module__lgJPRG__navCenter, .login-module__lgJPRG__logo, .login-module__lgJPRG__loginContainer, .login-module__lgJPRG__input, .login-module__lgJPRG__btnPrimary, .login-module__lgJPRG__divider, .login-module__lgJPRG__socialLogin, .login-module__lgJPRG__btnSocial, .login-module__lgJPRG__google, .login-module__lgJPRG__facebook, .login-module__lgJPRG__apple, .login-module__lgJPRG__btnBack, .login-module__lgJPRG__customFooter, .login-module__lgJPRG__link {
+}
+
+.login-module__lgJPRG__navCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.login-module__lgJPRG__logo {
+  max-height: 80px;
+  cursor: pointer;
+}
+
+.login-module__lgJPRG__loginContainer {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px #0003;
+  text-align: center;
+  width: 350px;
+  margin: 0 auto;
+}
+
+.login-module__lgJPRG__input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.login-module__lgJPRG__btnPrimary {
+  background-color: #531517;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+}
+
+.login-module__lgJPRG__btnPrimary:hover {
+  background-color: #f15f79;
+}
+
+.login-module__lgJPRG__divider {
+  margin: 15px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.login-module__lgJPRG__socialLogin {
+  display: flex;
+  gap: 10px;
+}
+
+.login-module__lgJPRG__btnSocial {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.login-module__lgJPRG__google, .login-module__lgJPRG__facebook, .login-module__lgJPRG__apple {
+}
+
+.login-module__lgJPRG__btnBack {
+  background: none;
+  border: 2px solid #b24592;
+  color: #b24592;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 100%;
+  margin-top: 15px;
+  transition: all .3s;
+}
+
+.login-module__lgJPRG__btnBack:hover {
+  background-color: #b24592;
+  color: #fff;
+}
+
+.login-module__lgJPRG__customFooter {
+  background: none;
+  color: #000;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.login-module__lgJPRG__link {
+  color: #20519b;
+}
+
+
+/*# sourceMappingURL=pages_login_module_8489cf33.css.map*/
