@@ -36,7 +36,7 @@ const PerfilUsuario = () => {
 
         const fetchProfile = async () => {
             try {
-                const res = await fetch('http://127.0.0.1:8000/api/users/profile/', {
+                const res = await fetch('https://backend-the-muffins.onrender.com/api/users/profile/', {
                     headers: { Authorization: `Bearer ${storedAccessToken}` },
                 });
                 const data = await res.json();
@@ -58,7 +58,7 @@ const PerfilUsuario = () => {
         if (mostrarSubastas) return setMostrarSubastas(false);
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/users/misSubastas/', {
+            const res = await fetch('https://backend-the-muffins.onrender.com/api/users/misSubastas/', {
                 headers: { Authorization: `Bearer ${accessToken}` },
             });
             const data = await res.json();
@@ -81,7 +81,7 @@ const PerfilUsuario = () => {
         if (mostrarPujas) return setMostrarPujas(false);
 
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/users/misPujas/', {
+            const res = await fetch('https://backend-the-muffins.onrender.com/api/users/misPujas/', {
                 headers: { Authorization: `Bearer ${accessToken}` },
             });
             const data = await res.json();
@@ -102,7 +102,7 @@ const PerfilUsuario = () => {
 
     const editarSubasta = async (id, nuevosDatos) => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/subastas/${id}/`, {
+            const res = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ const PerfilUsuario = () => {
 
     const eliminarSubasta = async (id) => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/subastas/${id}/`, {
+            const res = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${accessToken}` },
             });
@@ -138,7 +138,7 @@ const PerfilUsuario = () => {
 
     const editarPuja = async (auctionId, bidId, nuevoMonto) => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/subastas/${auctionId}/pujas/${bidId}/`, {
+            const res = await fetch(`https://backend-the-muffins.onrender.com/subastas/${auctionId}/pujas/${bidId}/`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -156,7 +156,7 @@ const PerfilUsuario = () => {
 
     const eliminarPuja = async (auctionId, bidId) => {
         try {
-            const res = await fetch(`http://127.0.0.1:8000/subastas/${auctionId}/pujas/${bidId}/`, {
+            const res = await fetch(`https://backend-the-muffins.onrender.com/subastas/${auctionId}/pujas/${bidId}/`, {
                 method: 'DELETE',
                 headers: { Authorization: `Bearer ${accessToken}` },
             });
@@ -174,7 +174,7 @@ const PerfilUsuario = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch('http://127.0.0.1:8000/api/users/log-out/', {
+            const res = await fetch('https://backend-the-muffins.onrender.com/api/users/log-out/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -212,7 +212,7 @@ const PerfilUsuario = () => {
         }
 
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/users/change-password/', {
+            const response = await fetch('https://backend-the-muffins.onrender.com/api/users/change-password/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
