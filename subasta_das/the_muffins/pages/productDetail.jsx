@@ -14,6 +14,10 @@ const ProductDetail = () => {
     const router = useRouter();
     const { id, pujas: showPujas } = router.query;
     const [userRating, setUserRating] = useState(null);
+    const [comentarios, setComentarios] = useState([]);
+    const [nuevoComentario, setNuevoComentario] = useState({ title: '', body: '' });
+    const [comentarioEditado, setComentarioEditado] = useState(null); 
+
 
     useEffect(() => {
         const token = localStorage.getItem('accessToken');
@@ -147,6 +151,87 @@ const ProductDetail = () => {
         router.reload();
     };
 
+    useEffect(() => {
+        if (id) {
+            const fetchComentarios = async () => {
+                try {
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`);
+                    if (response.ok) {
+                        const data = await response.json();
+                        setComentarios(data);
+                    }
+                } catch (error) {
+                    console.error("Error al cargar comentarios:", error);
+                }
+            };
+            fetchComentarios();
+        }
+    }, [id]);
+    
+    const handleChangeComentario = (e) => {
+        setNuevoComentario({ ...nuevoComentario, [e.target.name]: e.target.value });
+    };
+    
+    const handleSubmitComentario = async (e) => {
+        e.preventDefault();
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: JSON.stringify(nuevoComentario)
+            });
+            if (response.ok) {
+                setNuevoComentario({ title: '', body: '' });
+                const nuevo = await response.json();
+                setComentarios([nuevo, ...comentarios]);
+            }
+        } catch (error) {
+            console.error("Error al enviar comentario:", error);
+        }
+    };
+    
+    const handleEditarComentario = (comentario) => {
+        setComentarioEditado(comentario);
+    };
+    
+    const handleGuardarEdicion = async () => {
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/comentarios/${comentarioEditado.id}/`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: JSON.stringify(comentarioEditado)
+            });
+            if (response.ok) {
+                const actualizado = await response.json();
+                setComentarios(comentarios.map(c => c.id === actualizado.id ? actualizado : c));
+                setComentarioEditado(null);
+            }
+        } catch (error) {
+            console.error("Error al editar comentario:", error);
+        }
+    };
+    
+    const handleEliminarComentario = async (idComentario) => {
+        try {
+            await fetch(`http://127.0.0.1:8000/comentarios/${idComentario}/`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            });
+            setComentarios(comentarios.filter(c => c.id !== idComentario));
+        } catch (error) {
+            console.error("Error al eliminar comentario:", error);
+        }
+    };
+    
+
     if (error) return <p>{error}</p>;
     if (!producto) return <p>Cargando producto...</p>;
 
@@ -216,7 +301,7 @@ const ProductDetail = () => {
                                 <p><strong>Valoración media:</strong> {producto.average_rating}</p>
 
                                 {accessToken && (
-                                    <div>
+                                    <div className={styles.ratingContainer}>
                                         <label>Tu puntuación:</label>
                                         <select value={userRating || ''} onChange={handleRatingChange}>
                                             <option value="">Selecciona</option>
@@ -239,6 +324,67 @@ const ProductDetail = () => {
                             >
                                 Ver pujas
                             </button>
+
+                            <div className={styles.comentariosContainer}>
+                            <h2>Comentarios</h2>
+
+                            {comentarios.length === 0 && <p>No hay comentarios aún.</p>}
+
+                            {comentarios.map(c => (
+                                <div key={c.id} className={styles.comentarioBox}>
+                                    {comentarioEditado?.id === c.id ? (
+                                        <>
+                                            <input
+                                                type="text"
+                                                value={comentarioEditado.title}
+                                                onChange={(e) => setComentarioEditado({ ...comentarioEditado, title: e.target.value })}
+                                            />
+                                            <textarea
+                                                value={comentarioEditado.body}
+                                                onChange={(e) => setComentarioEditado({ ...comentarioEditado, body: e.target.value })}
+                                            />
+                                            <button onClick={handleGuardarEdicion}>Guardar</button>
+                                            <button onClick={() => setComentarioEditado(null)}>Cancelar</button>
+                                        </>
+                                    ) : (
+                                        <>
+                                            <h4>{c.title}</h4>
+                                            <p>{c.body}</p>
+                                            <p><em>{c.user}</em> - {new Date(c.created_at).toLocaleString()}</p>
+                                            {accessToken && c.user === localStorage.getItem("username") && (
+                                                <>
+                                                    <button onClick={() => handleEditarComentario(c)}>Editar</button>
+                                                    <button onClick={() => handleEliminarComentario(c.id)}>Eliminar</button>
+                                                </>
+                                            )}
+                                        </>
+                                    )}
+                                </div>
+                            ))}
+
+                            {accessToken && (
+                                <form onSubmit={handleSubmitComentario}>
+                                    <h3>Escribir un comentario</h3>
+                                    <input
+                                        type="text"
+                                        name="title"
+                                        value={nuevoComentario.title}
+                                        onChange={handleChangeComentario}
+                                        placeholder="Título"
+                                        required
+                                    />
+                                    <textarea
+                                        name="body"
+                                        value={nuevoComentario.body}
+                                        onChange={handleChangeComentario}
+                                        placeholder="Escribe tu comentario..."
+                                        required
+                                    />
+                                    <button type="submit">Publicar comentario</button>
+                                </form>
+                            )}
+                        </div>
+
                         </div>
                     )}
                 </div>

@@ -1092,6 +1092,7 @@ const CreateAuction = ()=>{
             });
             if (!res.ok) {
                 const errorData = await res.json();
+                console.log("🛑 Error data recibido:", errorData);
                 if (errorData.closing_date) {
                     setError(errorData.closing_date[0]);
                 } else {
@@ -1124,7 +1125,7 @@ const CreateAuction = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/pages/createauction.jsx",
-                lineNumber: 123,
+                lineNumber: 125,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1136,7 +1137,7 @@ const CreateAuction = ()=>{
                             children: "⚠ Para crear una subasta necesitas entrar en tu cuenta."
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 127,
+                            lineNumber: 129,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1149,12 +1150,12 @@ const CreateAuction = ()=>{
                                         children: "Iniciar sesión"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/createauction.jsx",
-                                        lineNumber: 129,
+                                        lineNumber: 131,
                                         columnNumber: 49
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/pages/createauction.jsx",
-                                    lineNumber: 129,
+                                    lineNumber: 131,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1164,24 +1165,24 @@ const CreateAuction = ()=>{
                                         children: "Registrarse"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/createauction.jsx",
-                                        lineNumber: 130,
+                                        lineNumber: 132,
                                         columnNumber: 52
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/pages/createauction.jsx",
-                                    lineNumber: 130,
+                                    lineNumber: 132,
                                     columnNumber: 29
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 128,
+                            lineNumber: 130,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/pages/createauction.jsx",
-                    lineNumber: 126,
+                    lineNumber: 128,
                     columnNumber: 21
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                     onSubmit: handleSubmit,
@@ -1191,7 +1192,7 @@ const CreateAuction = ()=>{
                             children: "Crear Nueva Subasta"
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 135,
+                            lineNumber: 137,
                             columnNumber: 25
                         }, this),
                         error && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1199,7 +1200,7 @@ const CreateAuction = ()=>{
                             children: error
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 137,
+                            lineNumber: 139,
                             columnNumber: 35
                         }, this),
                         success && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1207,7 +1208,7 @@ const CreateAuction = ()=>{
                             children: success
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 138,
+                            lineNumber: 140,
                             columnNumber: 37
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1220,7 +1221,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 140,
+                            lineNumber: 142,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -1232,7 +1233,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 141,
+                            lineNumber: 143,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1240,7 +1241,7 @@ const CreateAuction = ()=>{
                             children: "Fecha de cierre"
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 143,
+                            lineNumber: 145,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1252,7 +1253,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 144,
+                            lineNumber: 146,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1265,7 +1266,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 146,
+                            lineNumber: 148,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1278,7 +1279,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 147,
+                            lineNumber: 149,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1291,7 +1292,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 148,
+                            lineNumber: 150,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1304,7 +1305,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 149,
+                            lineNumber: 151,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1317,7 +1318,7 @@ const CreateAuction = ()=>{
                             required: true
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 150,
+                            lineNumber: 152,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
@@ -1325,7 +1326,7 @@ const CreateAuction = ()=>{
                             children: "Categoría"
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 152,
+                            lineNumber: 154,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1340,7 +1341,7 @@ const CreateAuction = ()=>{
                                     children: "Selecciona una categoría"
                                 }, void 0, false, {
                                     fileName: "[project]/pages/createauction.jsx",
-                                    lineNumber: 154,
+                                    lineNumber: 156,
                                     columnNumber: 29
                                 }, this),
                                 categories.map((cat)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1348,13 +1349,13 @@ const CreateAuction = ()=>{
                                         children: cat.name
                                     }, cat.id, false, {
                                         fileName: "[project]/pages/createauction.jsx",
-                                        lineNumber: 156,
+                                        lineNumber: 158,
                                         columnNumber: 33
                                     }, this))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 153,
+                            lineNumber: 155,
                             columnNumber: 25
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1363,31 +1364,31 @@ const CreateAuction = ()=>{
                             children: "Crear Subasta"
                         }, void 0, false, {
                             fileName: "[project]/pages/createauction.jsx",
-                            lineNumber: 160,
+                            lineNumber: 162,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/pages/createauction.jsx",
-                    lineNumber: 134,
+                    lineNumber: 136,
                     columnNumber: 21
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/createauction.jsx",
-                lineNumber: 124,
+                lineNumber: 126,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$footer$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
                 className: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$createAuction$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].stickyFooter
             }, void 0, false, {
                 fileName: "[project]/pages/createauction.jsx",
-                lineNumber: 164,
+                lineNumber: 166,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/createauction.jsx",
-        lineNumber: 122,
+        lineNumber: 124,
         columnNumber: 9
     }, this);
 };

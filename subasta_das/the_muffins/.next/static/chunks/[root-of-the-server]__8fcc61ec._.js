@@ -931,9 +931,13 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
+  "comentarioBox": "productDetail-module__2sF0gG__comentarioBox",
+  "comentariosContainer": "productDetail-module__2sF0gG__comentariosContainer",
   "detalleContainer": "productDetail-module__2sF0gG__detalleContainer",
   "detalleInfo": "productDetail-module__2sF0gG__detalleInfo",
   "productoImagenContainer": "productDetail-module__2sF0gG__productoImagenContainer",
+  "pujarBtn": "productDetail-module__2sF0gG__pujarBtn",
+  "ratingContainer": "productDetail-module__2sF0gG__ratingContainer",
 });
 }}),
 "[project]/pages/productDetail.jsx [client] (ecmascript)": ((__turbopack_context__) => {
@@ -967,6 +971,12 @@ const ProductDetail = ()=>{
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"])();
     const { id, pujas: showPujas } = router.query;
     const [userRating, setUserRating] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const [comentarios, setComentarios] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])([]);
+    const [nuevoComentario, setNuevoComentario] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])({
+        title: '',
+        body: ''
+    });
+    const [comentarioEditado, setComentarioEditado] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ProductDetail.useEffect": ()=>{
             const token = localStorage.getItem('accessToken');
@@ -1108,18 +1118,107 @@ const ProductDetail = ()=>{
         setUserRating(null);
         router.reload();
     };
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ProductDetail.useEffect": ()=>{
+            if (id) {
+                const fetchComentarios = {
+                    "ProductDetail.useEffect.fetchComentarios": async ()=>{
+                        try {
+                            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`);
+                            if (response.ok) {
+                                const data = await response.json();
+                                setComentarios(data);
+                            }
+                        } catch (error) {
+                            console.error("Error al cargar comentarios:", error);
+                        }
+                    }
+                }["ProductDetail.useEffect.fetchComentarios"];
+                fetchComentarios();
+            }
+        }
+    }["ProductDetail.useEffect"], [
+        id
+    ]);
+    const handleChangeComentario = (e)=>{
+        setNuevoComentario({
+            ...nuevoComentario,
+            [e.target.name]: e.target.value
+        });
+    };
+    const handleSubmitComentario = async (e)=>{
+        e.preventDefault();
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: JSON.stringify(nuevoComentario)
+            });
+            if (response.ok) {
+                setNuevoComentario({
+                    title: '',
+                    body: ''
+                });
+                const nuevo = await response.json();
+                setComentarios([
+                    nuevo,
+                    ...comentarios
+                ]);
+            }
+        } catch (error) {
+            console.error("Error al enviar comentario:", error);
+        }
+    };
+    const handleEditarComentario = (comentario)=>{
+        setComentarioEditado(comentario);
+    };
+    const handleGuardarEdicion = async ()=>{
+        try {
+            const response = await fetch(`http://127.0.0.1:8000/comentarios/${comentarioEditado.id}/`, {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${accessToken}`
+                },
+                body: JSON.stringify(comentarioEditado)
+            });
+            if (response.ok) {
+                const actualizado = await response.json();
+                setComentarios(comentarios.map((c)=>c.id === actualizado.id ? actualizado : c));
+                setComentarioEditado(null);
+            }
+        } catch (error) {
+            console.error("Error al editar comentario:", error);
+        }
+    };
+    const handleEliminarComentario = async (idComentario)=>{
+        try {
+            await fetch(`http://127.0.0.1:8000/comentarios/${idComentario}/`, {
+                method: "DELETE",
+                headers: {
+                    Authorization: `Bearer ${accessToken}`
+                }
+            });
+            setComentarios(comentarios.filter((c)=>c.id !== idComentario));
+        } catch (error) {
+            console.error("Error al eliminar comentario:", error);
+        }
+    };
     if (error) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
         children: error
     }, void 0, false, {
         fileName: "[project]/pages/productDetail.jsx",
-        lineNumber: 150,
+        lineNumber: 235,
         columnNumber: 23
     }, this);
     if (!producto) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
         children: "Cargando producto..."
     }, void 0, false, {
         fileName: "[project]/pages/productDetail.jsx",
-        lineNumber: 151,
+        lineNumber: 236,
         columnNumber: 27
     }, this);
     const ultimaPuja = pujas.length > 0 ? Math.max(...pujas.map((p)=>p.amount)) : producto.price;
@@ -1127,7 +1226,7 @@ const ProductDetail = ()=>{
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/pages/productDetail.jsx",
-                lineNumber: 159,
+                lineNumber: 244,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1140,7 +1239,7 @@ const ProductDetail = ()=>{
                                 children: "Pujas en esta subasta"
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 164,
+                                lineNumber: 249,
                                 columnNumber: 29
                             }, this),
                             pujas.length > 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -1155,18 +1254,18 @@ const ProductDetail = ()=>{
                                         ]
                                     }, puja.id, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 168,
+                                        lineNumber: 253,
                                         columnNumber: 41
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 166,
+                                lineNumber: 251,
                                 columnNumber: 33
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 children: "No hay pujas aún."
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 174,
+                                lineNumber: 259,
                                 columnNumber: 33
                             }, this),
                             pujaError && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1176,7 +1275,7 @@ const ProductDetail = ()=>{
                                 children: pujaError
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 177,
+                                lineNumber: 262,
                                 columnNumber: 43
                             }, this),
                             accessToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
@@ -1187,7 +1286,7 @@ const ProductDetail = ()=>{
                                         children: "Monto de la puja:"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 181,
+                                        lineNumber: 266,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1199,7 +1298,7 @@ const ProductDetail = ()=>{
                                         required: true
                                     }, void 0, false, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 182,
+                                        lineNumber: 267,
                                         columnNumber: 37
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1207,13 +1306,13 @@ const ProductDetail = ()=>{
                                         children: "Hacer puja"
                                     }, void 0, false, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 190,
+                                        lineNumber: 275,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 180,
+                                lineNumber: 265,
                                 columnNumber: 33
                             }, this),
                             !accessToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1223,7 +1322,7 @@ const ProductDetail = ()=>{
                                 children: "⚠️ Debes iniciar sesión para hacer una puja."
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 195,
+                                lineNumber: 280,
                                 columnNumber: 33
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1231,13 +1330,13 @@ const ProductDetail = ()=>{
                                 children: "Volver a detalles"
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 198,
+                                lineNumber: 283,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/productDetail.jsx",
-                        lineNumber: 163,
+                        lineNumber: 248,
                         columnNumber: 25
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
@@ -1248,12 +1347,12 @@ const ProductDetail = ()=>{
                                     alt: producto.title
                                 }, void 0, false, {
                                     fileName: "[project]/pages/productDetail.jsx",
-                                    lineNumber: 203,
+                                    lineNumber: 288,
                                     columnNumber: 33
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 202,
+                                lineNumber: 287,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1263,14 +1362,14 @@ const ProductDetail = ()=>{
                                         children: producto.title
                                     }, void 0, false, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 206,
+                                        lineNumber: 291,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         children: producto.description
                                     }, void 0, false, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 207,
+                                        lineNumber: 292,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1279,7 +1378,7 @@ const ProductDetail = ()=>{
                                                 children: "Precio inicial:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 208,
+                                                lineNumber: 293,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1288,7 +1387,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 208,
+                                        lineNumber: 293,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1297,7 +1396,7 @@ const ProductDetail = ()=>{
                                                 children: "Fecha de creación:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 209,
+                                                lineNumber: 294,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1305,7 +1404,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 209,
+                                        lineNumber: 294,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1314,7 +1413,7 @@ const ProductDetail = ()=>{
                                                 children: "Finaliza:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 210,
+                                                lineNumber: 295,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1322,7 +1421,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 210,
+                                        lineNumber: 295,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1331,7 +1430,7 @@ const ProductDetail = ()=>{
                                                 children: "Stock:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 211,
+                                                lineNumber: 296,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1339,7 +1438,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 211,
+                                        lineNumber: 296,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1348,7 +1447,7 @@ const ProductDetail = ()=>{
                                                 children: "Marca:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 212,
+                                                lineNumber: 297,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1356,7 +1455,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 212,
+                                        lineNumber: 297,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1365,7 +1464,7 @@ const ProductDetail = ()=>{
                                                 children: "Categoría ID:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 213,
+                                                lineNumber: 298,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1373,7 +1472,7 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 213,
+                                        lineNumber: 298,
                                         columnNumber: 33
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1382,7 +1481,7 @@ const ProductDetail = ()=>{
                                                 children: "Valoración media:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 216,
+                                                lineNumber: 301,
                                                 columnNumber: 36
                                             }, this),
                                             " ",
@@ -1390,16 +1489,17 @@ const ProductDetail = ()=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 216,
+                                        lineNumber: 301,
                                         columnNumber: 33
                                     }, this),
                                     accessToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$productDetail$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].ratingContainer,
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
                                                 children: "Tu puntuación:"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 220,
+                                                lineNumber: 305,
                                                 columnNumber: 41
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1411,7 +1511,7 @@ const ProductDetail = ()=>{
                                                         children: "Selecciona"
                                                     }, void 0, false, {
                                                         fileName: "[project]/pages/productDetail.jsx",
-                                                        lineNumber: 222,
+                                                        lineNumber: 307,
                                                         columnNumber: 45
                                                     }, this),
                                                     [
@@ -1425,13 +1525,13 @@ const ProductDetail = ()=>{
                                                             children: n
                                                         }, n, false, {
                                                             fileName: "[project]/pages/productDetail.jsx",
-                                                            lineNumber: 224,
+                                                            lineNumber: 309,
                                                             columnNumber: 49
                                                         }, this))
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 221,
+                                                lineNumber: 306,
                                                 columnNumber: 41
                                             }, this),
                                             userRating && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1439,19 +1539,19 @@ const ProductDetail = ()=>{
                                                 children: "Eliminar puntuación"
                                             }, void 0, false, {
                                                 fileName: "[project]/pages/productDetail.jsx",
-                                                lineNumber: 228,
+                                                lineNumber: 313,
                                                 columnNumber: 45
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/pages/productDetail.jsx",
-                                        lineNumber: 219,
+                                        lineNumber: 304,
                                         columnNumber: 37
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 205,
+                                lineNumber: 290,
                                 columnNumber: 29
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1460,33 +1560,207 @@ const ProductDetail = ()=>{
                                 children: "Ver pujas"
                             }, void 0, false, {
                                 fileName: "[project]/pages/productDetail.jsx",
-                                lineNumber: 236,
+                                lineNumber: 321,
+                                columnNumber: 29
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$productDetail$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].comentariosContainer,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        children: "Comentarios"
+                                    }, void 0, false, {
+                                        fileName: "[project]/pages/productDetail.jsx",
+                                        lineNumber: 329,
+                                        columnNumber: 29
+                                    }, this),
+                                    comentarios.length === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        children: "No hay comentarios aún."
+                                    }, void 0, false, {
+                                        fileName: "[project]/pages/productDetail.jsx",
+                                        lineNumber: 331,
+                                        columnNumber: 58
+                                    }, this),
+                                    comentarios.map((c)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: __TURBOPACK__imported__module__$5b$project$5d2f$pages$2f$productDetail$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].comentarioBox,
+                                            children: comentarioEditado?.id === c.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                        type: "text",
+                                                        value: comentarioEditado.title,
+                                                        onChange: (e)=>setComentarioEditado({
+                                                                ...comentarioEditado,
+                                                                title: e.target.value
+                                                            })
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 337,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                        value: comentarioEditado.body,
+                                                        onChange: (e)=>setComentarioEditado({
+                                                                ...comentarioEditado,
+                                                                body: e.target.value
+                                                            })
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 342,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: handleGuardarEdicion,
+                                                        children: "Guardar"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 346,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        onClick: ()=>setComentarioEditado(null),
+                                                        children: "Cancelar"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 347,
+                                                        columnNumber: 45
+                                                    }, this)
+                                                ]
+                                            }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
+                                                        children: c.title
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 351,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        children: c.body
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 352,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("em", {
+                                                                children: c.user
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/pages/productDetail.jsx",
+                                                                lineNumber: 353,
+                                                                columnNumber: 48
+                                                            }, this),
+                                                            " - ",
+                                                            new Date(c.created_at).toLocaleString()
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/pages/productDetail.jsx",
+                                                        lineNumber: 353,
+                                                        columnNumber: 45
+                                                    }, this),
+                                                    accessToken && c.user === localStorage.getItem("username") && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                onClick: ()=>handleEditarComentario(c),
+                                                                children: "Editar"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/pages/productDetail.jsx",
+                                                                lineNumber: 356,
+                                                                columnNumber: 53
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                                onClick: ()=>handleEliminarComentario(c.id),
+                                                                children: "Eliminar"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/pages/productDetail.jsx",
+                                                                lineNumber: 357,
+                                                                columnNumber: 53
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true)
+                                                ]
+                                            }, void 0, true)
+                                        }, c.id, false, {
+                                            fileName: "[project]/pages/productDetail.jsx",
+                                            lineNumber: 334,
+                                            columnNumber: 33
+                                        }, this)),
+                                    accessToken && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                        onSubmit: handleSubmitComentario,
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                                children: "Escribir un comentario"
+                                            }, void 0, false, {
+                                                fileName: "[project]/pages/productDetail.jsx",
+                                                lineNumber: 367,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                type: "text",
+                                                name: "title",
+                                                value: nuevoComentario.title,
+                                                onChange: handleChangeComentario,
+                                                placeholder: "Título",
+                                                required: true
+                                            }, void 0, false, {
+                                                fileName: "[project]/pages/productDetail.jsx",
+                                                lineNumber: 368,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                name: "body",
+                                                value: nuevoComentario.body,
+                                                onChange: handleChangeComentario,
+                                                placeholder: "Escribe tu comentario...",
+                                                required: true
+                                            }, void 0, false, {
+                                                fileName: "[project]/pages/productDetail.jsx",
+                                                lineNumber: 376,
+                                                columnNumber: 37
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "submit",
+                                                children: "Publicar comentario"
+                                            }, void 0, false, {
+                                                fileName: "[project]/pages/productDetail.jsx",
+                                                lineNumber: 383,
+                                                columnNumber: 37
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/pages/productDetail.jsx",
+                                        lineNumber: 366,
+                                        columnNumber: 33
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/pages/productDetail.jsx",
+                                lineNumber: 328,
                                 columnNumber: 29
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/pages/productDetail.jsx",
-                        lineNumber: 201,
+                        lineNumber: 286,
                         columnNumber: 25
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/pages/productDetail.jsx",
-                    lineNumber: 161,
+                    lineNumber: 246,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/pages/productDetail.jsx",
-                lineNumber: 160,
+                lineNumber: 245,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/pages/productDetail.jsx",
-        lineNumber: 158,
+        lineNumber: 243,
         columnNumber: 9
     }, this);
 };
-_s(ProductDetail, "lmbuwdHHeT64q881RTdP94aiqFA=", false, function() {
+_s(ProductDetail, "+VYkoDhVXP/ihhna0pPU/OiaRHA=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$router$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useRouter"]
     ];

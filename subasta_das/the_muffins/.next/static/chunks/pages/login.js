@@ -1,9 +1,9 @@
 __turbopack_load_page_chunks__("/login", [
-  "static/chunks/node_modules_next_96b4cce5._.js",
+  "static/chunks/node_modules_next_9a882e92._.js",
   "static/chunks/node_modules_react-dom_82bb97c6._.js",
-  "static/chunks/node_modules_1b7400a8._.js",
-  "static/chunks/[root of the server]__03a491f5._.js",
+  "static/chunks/node_modules_2a5cf4bb._.js",
+  "static/chunks/[root-of-the-server]__03a491f5._.js",
   "static/chunks/pages_login_module_8489cf33.css",
   "static/chunks/pages_login_5771e187._.js",
-  "static/chunks/pages_login_8caa40eb._.js"
+  "static/chunks/pages_login_14ab5603._.js"
 ])

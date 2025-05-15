@@ -95,6 +95,8 @@ const CreateAuction = () => {
 
             if (!res.ok) {
                 const errorData = await res.json();
+                console.log("🛑 Error data recibido:", errorData);
+
                 if (errorData.closing_date) {
                     setError(errorData.closing_date[0]);
                 } else {
