@@ -1,0 +1,42 @@
+/* [project]/pages/productDetail.module.css [client] (css) */
+.productDetail-module__2sF0gG__detalleContainer {
+  background: #fff;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px;
+  display: flex;
+  box-shadow: 0 4px 10px #0000001a;
+}
+
+.productDetail-module__2sF0gG__productoImagenContainer {
+  text-align: center;
+  flex: 1;
+}
+
+.productDetail-module__2sF0gG__productoImagenContainer img {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 4px 10px #0003;
+}
+
+.productDetail-module__2sF0gG__detalleInfo {
+  text-align: left;
+  flex: 1;
+}
+
+.productDetail-module__2sF0gG__detalleInfo h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+}
+
+.productDetail-module__2sF0gG__detalleInfo p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+/*# sourceMappingURL=pages_productDetail_module_css_2bef753f._.single.css.map*/

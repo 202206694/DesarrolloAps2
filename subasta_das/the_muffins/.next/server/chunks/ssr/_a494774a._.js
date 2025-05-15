@@ -3,7 +3,7 @@ module.exports = {
 "[project]/components/header.js (client reference/proxy) <module evaluation>": ((__turbopack_context__) => {
 "use strict";
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
@@ -17,7 +17,7 @@ const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$pr
 "[project]/components/header.js (client reference/proxy)": ((__turbopack_context__) => {
 "use strict";
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
@@ -31,7 +31,7 @@ const __TURBOPACK__default__export__ = (0, __TURBOPACK__imported__module__$5b$pr
 "[project]/components/header.js [app-rsc] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$js__$28$client__reference$2f$proxy$29$__$3c$module__evaluation$3e$__ = __turbopack_context__.i("[project]/components/header.js (client reference/proxy) <module evaluation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$js__$28$client__reference$2f$proxy$29$__ = __turbopack_context__.i("[project]/components/header.js (client reference/proxy)");
@@ -40,7 +40,7 @@ __turbopack_context__.n(__TURBOPACK__imported__module__$5b$project$5d2f$componen
 }}),
 "[project]/components/footer.module.css [app-rsc] (css module)": ((__turbopack_context__) => {
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
   "footer": "footer-module__oqRDSq__footer",
@@ -49,7 +49,7 @@ __turbopack_context__.v({
 "[project]/components/footer.js [app-rsc] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 // components/Footer.jsx
 __turbopack_context__.s({
@@ -71,7 +71,7 @@ const __TURBOPACK__default__export__ = Footer;
 }}),
 "[project]/app/page.module.css [app-rsc] (css module)": ((__turbopack_context__) => {
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
   "ctas": "page-module__E0kJGG__ctas",
@@ -86,7 +86,7 @@ __turbopack_context__.v({
 "[project]/app/layout.js [app-rsc] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 
-var { g: global, d: __dirname } = __turbopack_context__;
+var { g: global, __dirname } = __turbopack_context__;
 {
 __turbopack_context__.s({
     "default": (()=>__TURBOPACK__default__export__)
@@ -118,7 +118,7 @@ const __TURBOPACK__default__export__ = Layout;
 }}),
 "[project]/node_modules/next/dist/server/route-modules/app-page/vendored/rsc/react-jsx-dev-runtime.js [app-rsc] (ecmascript)": (function(__turbopack_context__) {
 
-var { g: global, d: __dirname, m: module, e: exports } = __turbopack_context__;
+var { g: global, __dirname, m: module, e: exports } = __turbopack_context__;
 {
 "use strict";
 module.exports = __turbopack_context__.r("[project]/node_modules/next/dist/server/route-modules/app-page/module.compiled.js [app-rsc] (ecmascript)").vendored['react-rsc'].ReactJsxDevRuntime; //# sourceMappingURL=react-jsx-dev-runtime.js.map

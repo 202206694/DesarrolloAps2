@@ -1,1 +1,78 @@
-globalThis.__BUILD_MANIFEST={"pages":{"/_app":["static/chunks/[root of the server]__344122cf._.js","static/chunks/node_modules_react-dom_82bb97c6._.js","static/chunks/node_modules_beb00741._.js","static/chunks/[root of the server]__49fd8634._.js","static/chunks/pages__app_5771e187._.js","static/chunks/pages__app_19550276._.js"],"/products":["static/chunks/node_modules_next_dist_compiled_014ba9ec._.js","static/chunks/node_modules_next_dist_shared_lib_e9b36154._.js","static/chunks/node_modules_next_dist_client_2b75ce86._.js","static/chunks/node_modules_next_dist_b512dcca._.js","static/chunks/node_modules_next_ba9b7647._.js","static/chunks/node_modules_react-dom_82bb97c6._.js","static/chunks/node_modules_1b7400a8._.js","static/chunks/[root of the server]__d4f7d8ad._.js","static/chunks/_f6dd75d4._.css","static/chunks/pages_products_5771e187._.js","static/chunks/pages_products_19cf8c12._.js"],"/perfilUsuario":["static/chunks/node_modules_next_96b4cce5._.js","static/chunks/node_modules_react-dom_82bb97c6._.js","static/chunks/node_modules_1b7400a8._.js","static/chunks/[root of the server]__ef878980._.js","static/chunks/_3725d2ef._.css","static/chunks/pages_perfilUsuario_5771e187._.js","static/chunks/pages_perfilUsuario_5598b5b7._.js"],"/createauction":["static/chunks/node_modules_next_dist_compiled_014ba9ec._.js","static/chunks/node_modules_next_dist_shared_lib_e9b36154._.js","static/chunks/node_modules_next_dist_client_2b75ce86._.js","static/chunks/node_modules_next_dist_b512dcca._.js","static/chunks/node_modules_next_ba9b7647._.js","static/chunks/node_modules_react-dom_82bb97c6._.js","static/chunks/node_modules_1b7400a8._.js","static/chunks/[root of the server]__a23b47bb._.js","static/chunks/_5cf0eff8._.css","static/chunks/pages_createauction_5771e187._.js","static/chunks/pages_createauction_9f691746._.js"],"/productDetail":["static/chunks/node_modules_next_ee6731c4._.js","static/chunks/node_modules_react-dom_82bb97c6._.js","static/chunks/node_modules_1b7400a8._.js","static/chunks/[root of the server]__8fcc61ec._.js","static/chunks/_83462dd2._.css","static/chunks/pages_productDetail_5771e187._.js","static/chunks/pages_productDetail_2094ab86._.js"]},"devFiles":[],"ampDevFiles":[],"polyfillFiles":["static/chunks/node_modules_next_dist_build_polyfills_polyfill-nomodule.js"],"lowPriorityFiles":["static/development/_ssgManifest.js","static/development/_buildManifest.js"],"rootMainFiles":["static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fff34f97._.js","static/chunks/node_modules_next_dist_compiled_react-dom_1f56dc06._.js","static/chunks/node_modules_next_dist_compiled_38d265cf._.js","static/chunks/node_modules_next_dist_client_c24f7707._.js","static/chunks/node_modules_next_dist_3bfaed20._.js","static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js","static/chunks/_e69f0d32._.js","static/chunks/_a2b209e9._.js"],"ampFirstPages":[]};
+globalThis.__BUILD_MANIFEST = {
+  "pages": {
+    "/_app": [
+      "static/chunks/[root-of-the-server]__e2c08166._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_a51498a5._.js",
+      "static/chunks/[root-of-the-server]__49fd8634._.js",
+      "static/chunks/pages__app_5771e187._.js",
+      "static/chunks/pages__app_9114105e._.js"
+    ],
+    "/createauction": [
+      "static/chunks/node_modules_next_87827338._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__a23b47bb._.js",
+      "static/chunks/_5cf0eff8._.css",
+      "static/chunks/pages_createauction_5771e187._.js",
+      "static/chunks/pages_createauction_5c7a2444._.js"
+    ],
+    "/perfilUsuario": [
+      "static/chunks/node_modules_next_9a882e92._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__ef878980._.js",
+      "static/chunks/_3725d2ef._.css",
+      "static/chunks/pages_perfilUsuario_5771e187._.js",
+      "static/chunks/pages_perfilUsuario_6ee20adc._.js"
+    ],
+    "/productDetail": [
+      "static/chunks/node_modules_next_f7974fe8._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__8fcc61ec._.js",
+      "static/chunks/_83462dd2._.css",
+      "static/chunks/pages_productDetail_5771e187._.js",
+      "static/chunks/pages_productDetail_b79d5368._.js"
+    ],
+    "/products": [
+      "static/chunks/node_modules_next_87827338._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__d4f7d8ad._.js",
+      "static/chunks/_f6dd75d4._.css",
+      "static/chunks/pages_products_5771e187._.js",
+      "static/chunks/pages_products_773d8360._.js"
+    ],
+    "/search": [
+      "static/chunks/node_modules_next_81546995._.js",
+      "static/chunks/node_modules_react-dom_82bb97c6._.js",
+      "static/chunks/node_modules_2a5cf4bb._.js",
+      "static/chunks/[root-of-the-server]__5094b635._.js",
+      "static/chunks/_9b015a71._.css",
+      "static/chunks/pages_search_5771e187._.js",
+      "static/chunks/pages_search_b6ec2f69._.js"
+    ]
+  },
+  "devFiles": [],
+  "ampDevFiles": [],
+  "polyfillFiles": [
+    "static/chunks/node_modules_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_fd44f5a4._.js",
+    "static/chunks/node_modules_next_dist_compiled_2ce9398a._.js",
+    "static/chunks/node_modules_next_dist_client_8f19e6fb._.js",
+    "static/chunks/node_modules_next_dist_2ecbf5fa._.js",
+    "static/chunks/node_modules_@swc_helpers_cjs_00636ac3._.js",
+    "static/chunks/_e69f0d32._.js",
+    "static/chunks/_93808211._.js"
+  ],
+  "ampFirstPages": []
+};
+globalThis.__BUILD_MANIFEST.lowPriorityFiles = [
+"/static/" + process.env.__NEXT_BUILD_ID + "/_buildManifest.js",
+,"/static/" + process.env.__NEXT_BUILD_ID + "/_ssgManifest.js",
+
+];

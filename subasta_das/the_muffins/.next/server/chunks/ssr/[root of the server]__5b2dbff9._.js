@@ -619,7 +619,7 @@ const Products = ()=>{
     (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
         const fetchCategorias = async ()=>{
             try {
-                const response = await fetch('https://backend-the-muffins.onrender.com/subastas/categorias/');
+                const response = await fetch('http://127.0.0.1:8000/subastas/categorias/');
                 if (!response.ok) throw new Error('Error al obtener las categorías');
                 const data = await response.json();
                 setCategorias(data.results);
@@ -642,7 +642,7 @@ const Products = ()=>{
                 if (typeof categoriaId === 'number') queryParams.push(`category=${categoriaId}`);
                 if (fetchRangos) queryParams.push(fetchRangos.replace('?', ''));
                 const queryString = queryParams.length > 0 ? `?${queryParams.join('&')}` : '';
-                const baseUrl = `https://backend-the-muffins.onrender.com/subastas/${queryString}`;
+                const baseUrl = `http://127.0.0.1:8000/subastas/${queryString}`;
                 let allResults = [];
                 let nextUrl = baseUrl;
                 while(nextUrl){

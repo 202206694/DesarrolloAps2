@@ -1,26 +1,26 @@
 /* [project]/components/header.module.css [client] (css) */
 .header-module__bY5_QG__header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 20px;
-  position: relative;
   z-index: 1000;
+  background-color: #fff;
+  align-items: center;
+  height: 80px;
+  padding: 10px 20px;
+  display: flex;
+  position: relative;
 }
 
 .header-module__bY5_QG__sideMenu {
+  z-index: 1000;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  transition: transform .3s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 100vh;
-  background-color: #fff;
-  box-shadow: 2px 0 5px #0003;
   transform: translateX(-100%);
-  transition: transform .3s ease-in-out;
-  z-index: 1000;
-  padding: 20px;
+  box-shadow: 2px 0 5px #0003;
 }
 
 .header-module__bY5_QG__sideMenu.header-module__bY5_QG__open {
@@ -28,16 +28,16 @@
 }
 
 .header-module__bY5_QG__sideMenu button {
+  text-align: left;
+  cursor: pointer;
   background-color: #fff;
   border: none;
-  padding: 10px 15px;
-  margin: 5px 0;
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color .3s ease-in-out, transform .1s ease-in-out;
   border-radius: 5px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color .3s ease-in-out, transform .1s ease-in-out;
 }
 
 .header-module__bY5_QG__sideMenu button:hover {
@@ -46,44 +46,44 @@
 }
 
 .header-module__bY5_QG__menuContent {
-  display: flex;
   flex-direction: column;
   gap: 10px;
+  display: flex;
 }
 
 .header-module__bY5_QG__closeBtn {
-  align-self: flex-end;
+  cursor: pointer;
   background: none;
   border: none;
+  align-self: flex-end;
   font-size: 24px;
-  cursor: pointer;
 }
 
 .header-module__bY5_QG__nav {
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .header-module__bY5_QG__navLeft, .header-module__bY5_QG__navCenter, .header-module__bY5_QG__navRight {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .header-module__bY5_QG__navCenter {
   flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .header-module__bY5_QG__logo {
-  max-height: 80px;
   width: auto;
+  max-height: 80px;
 }
 
 .header-module__bY5_QG__navRight {
@@ -92,33 +92,33 @@
 }
 
 .header-module__bY5_QG__searchContainer {
-  display: inline-block;
   align-items: center;
-  position: relative;
   margin-left: 150px;
+  display: inline-block;
+  position: relative;
 }
 
 .header-module__bY5_QG__searchIcon {
   cursor: pointer;
+  z-index: 10;
   font-size: 20px;
   position: relative;
-  z-index: 10;
 }
 
 .header-module__bY5_QG__searchModal {
+  z-index: 100;
+  background: #fff;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  padding: 10px;
+  display: flex;
   position: absolute;
   top: 50%;
   left: -237px;
   transform: translateY(-50%);
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
   box-shadow: 0 4px 6px #0000001a;
-  z-index: 100;
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .header-module__bY5_QG__hidden {
@@ -126,21 +126,21 @@
 }
 
 .header-module__bY5_QG__navList {
-  list-style: none;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  list-style: none;
   display: flex;
-  justify-content: flex-end;
 }
 
 .header-module__bY5_QG__navItem, .header-module__bY5_QG__menuIcon {
+  cursor: pointer;
   background-color: #fff;
   border: none;
+  border-radius: 5px;
   padding: 8px 12px;
   font-size: 16px;
-  cursor: pointer;
   transition: background-color .3s ease-in-out, transform .1s ease-in-out;
-  border-radius: 5px;
 }
 
 .header-module__bY5_QG__navItem:hover, .header-module__bY5_QG__menuIcon:hover {
@@ -149,10 +149,10 @@
 }
 
 .header-module__bY5_QG__navLink {
-  text-decoration: none;
   color: #000;
-  font-size: 15px;
   padding: 10px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .header-module__bY5_QG__navLink:hover {
@@ -162,12 +162,12 @@
 
 /* [project]/components/footer.module.css [client] (css) */
 .footer-module__oqRDSq__footer {
-  background: #000;
   color: #fff;
   text-align: center;
+  background: #000;
+  width: 100%;
   padding: 25px;
   font-size: 16px;
-  width: 100%;
   position: relative;
   bottom: 0;
   left: 0;
@@ -176,8 +176,8 @@
 
 /* [project]/pages/products.module.css [client] (css) */
 .products-module__Gf_B2q__navLeft, .products-module__Gf_B2q__navCenter, .products-module__Gf_B2q__navRight {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .products-module__Gf_B2q__navCenter {
@@ -185,27 +185,27 @@
 }
 
 .products-module__Gf_B2q__logo {
-  max-height: 80px;
   cursor: pointer;
+  max-height: 80px;
 }
 
 .products-module__Gf_B2q__searchContainer {
+  align-items: center;
   margin-left: auto;
   display: flex;
-  align-items: center;
 }
 
 .products-module__Gf_B2q__productosGrid {
-  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
+  display: grid;
 }
 
 .products-module__Gf_B2q__productoCard {
+  text-align: center;
   border: 1px solid #ccc;
   padding: 10px;
-  text-align: center;
 }
 
 .products-module__Gf_B2q__productoCard img {
@@ -220,21 +220,21 @@
 
 .products-module__Gf_B2q__customFooter {
   text-align: center;
-  padding: 20px;
-  background-color: #000;
   color: #fff;
+  background-color: #000;
+  width: 100%;
+  padding: 20px;
   position: fixed;
   bottom: 0;
-  width: 100%;
 }
 
 .products-module__Gf_B2q__customButton {
-  background-color: #531517;
   color: #fff;
-  padding: 12px;
+  cursor: pointer;
+  background-color: #531517;
   border: none;
   border-radius: 5px;
-  cursor: pointer;
+  padding: 12px;
   font-size: 16px;
 }
 
@@ -244,9 +244,9 @@
 
 .products-module__Gf_B2q__loadingMessage {
   text-align: center;
-  font-size: 1rem;
-  padding: 2rem;
   color: #000;
+  padding: 2rem;
+  font-size: 1rem;
 }
 
 

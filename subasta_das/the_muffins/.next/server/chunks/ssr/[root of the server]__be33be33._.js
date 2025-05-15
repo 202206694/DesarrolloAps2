@@ -432,13 +432,13 @@ function Header() {
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?price_min=0&price_max=50",
+                                    href: "/products?price_range=under_100",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        children: "Hasta 50 €"
+                                        children: "Menos de 100 €"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
                                         lineNumber: 103,
-                                        columnNumber: 63
+                                        columnNumber: 60
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
@@ -446,13 +446,13 @@ function Header() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?price_min=50&price_max=100",
+                                    href: "/products?price_range=between_100_1000",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        children: "50 € - 100 €"
+                                        children: "100 € - 1000 €"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
                                         lineNumber: 104,
-                                        columnNumber: 65
+                                        columnNumber: 67
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
@@ -460,45 +460,17 @@ function Header() {
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?price_min=100&price_max=250",
+                                    href: "/products?price_range=over_1000",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        children: "100 € - 250 €"
+                                        children: "Más de 1000 €"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
                                         lineNumber: 105,
-                                        columnNumber: 66
+                                        columnNumber: 60
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
                                     lineNumber: 105,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?price_min=250&price_max=500",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        children: "250 € - 500 €"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 106,
-                                        columnNumber: 66
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 106,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?price_min=500&price_max=1000",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
-                                        children: "Más de 500 €"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 107,
-                                        columnNumber: 67
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 107,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -562,7 +534,6 @@ const __TURBOPACK__default__export__ = Footer;
 var { g: global, d: __dirname } = __turbopack_context__;
 {
 __turbopack_context__.v({
-  "__next": "createAuction-module__qop4RW____next",
   "authLinks": "createAuction-module__qop4RW__authLinks",
   "authMessage": "createAuction-module__qop4RW__authMessage",
   "button": "createAuction-module__qop4RW__button",
@@ -693,7 +664,7 @@ const CreateAuction = ()=>{
             return;
         }
         try {
-            const res = await fetch('https://backend-the-muffins.onrender.com/subastas/', {
+            const res = await fetch('http://127.0.0.1:8000/subastas/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

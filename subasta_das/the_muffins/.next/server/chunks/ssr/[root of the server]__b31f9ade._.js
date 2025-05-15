@@ -574,7 +574,7 @@ const ProductDetail = ()=>{
         if (id) {
             const fetchProduct = async ()=>{
                 try {
-                    const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/`);
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/`);
                     if (!response.ok) throw new Error("Producto no encontrado");
                     const data = await response.json();
                     setProducto(data);
@@ -592,7 +592,7 @@ const ProductDetail = ()=>{
         if (id && showPujas) {
             const fetchPujas = async ()=>{
                 try {
-                    const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/pujas/`);
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/pujas/`);
                     if (!response.ok) throw new Error("No se encontraron pujas");
                     const data = await response.json();
                     setPujas(data.results);
@@ -624,7 +624,7 @@ const ProductDetail = ()=>{
             return;
         }
         try {
-            const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/pujas/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/pujas/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -1,15 +1,11 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([
-    "static/chunks/pages_perfilUsuario_5771e187._.js",
-    {},
-]);
 (globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
-  "path": "static/chunks/pages_perfilUsuario_5771e187._.js",
-  "chunks": [
-    "static/chunks/node_modules_next_96b4cce5._.js",
-    "static/chunks/node_modules_react-dom_82bb97c6._.js",
-    "static/chunks/node_modules_1b7400a8._.js",
-    "static/chunks/[root of the server]__ef878980._.js",
-    "static/chunks/_3725d2ef._.css"
-  ],
-  "source": "entry"
+    script: typeof document === "object" ? document.currentScript : undefined,
+    chunks: [
+  "static/chunks/node_modules_next_9a882e92._.js",
+  "static/chunks/node_modules_react-dom_82bb97c6._.js",
+  "static/chunks/node_modules_2a5cf4bb._.js",
+  "static/chunks/[root-of-the-server]__ef878980._.js",
+  "static/chunks/_3725d2ef._.css"
+],
+    source: "entry"
 });

@@ -25,7 +25,7 @@ const SearchPage = () => {
       setLoading(true); // aseguramos que loading se activa al empezar
 
       try {
-        const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/?search=${encodeURIComponent(query)}`);
+        const response = await fetch(`http://127.0.0.1:8000/subastas/?search=${encodeURIComponent(query)}`);
         if (!response.ok) {
           throw new Error('No se pudo cargar los productos');
         }
