@@ -1,5 +1,12 @@
 {
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/perfilUsuario": "pages/perfilUsuario.js"
+  "/_error": "pages/_error.js",
+  "/createauction": "pages/createauction.js",
+  "/login": "pages/login.js",
+  "/perfilUsuario": "pages/perfilUsuario.js",
+  "/productDetail": "pages/productDetail.js",
+  "/products": "pages/products.js",
+  "/registro": "pages/registro.js",
+  "/search": "pages/search.js"
 }

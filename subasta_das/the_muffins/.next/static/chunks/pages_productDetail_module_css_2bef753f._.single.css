@@ -39,41 +39,40 @@
   font-size: 18px;
 }
 
-.productDetail-module__2sF0gG__ratingContainer {
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  margin-top: 20px;
-  padding: 15px;
+.productDetail-module__2sF0gG__ratingSection {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: inline-block;
 }
 
-.productDetail-module__2sF0gG__ratingContainer label {
-  margin-right: 10px;
-  font-size: 18px;
-  font-weight: bold;
+.productDetail-module__2sF0gG__ratingControls {
+  align-items: center;
+  gap: .8rem;
+  margin-top: .5rem;
+  display: flex;
 }
 
-.productDetail-module__2sF0gG__ratingContainer select {
+.productDetail-module__2sF0gG__ratingControls select {
   border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-right: 10px;
-  padding: 6px 12px;
-  font-size: 16px;
+  border-radius: 4px;
+  padding: .4rem;
+  font-size: 1rem;
 }
 
-.productDetail-module__2sF0gG__ratingContainer button {
-  color: #fff;
+.productDetail-module__2sF0gG__deleteRatingBtn {
+  color: #a00;
   cursor: pointer;
-  background-color: #ff6b6b;
-  border: none;
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 14px;
-  transition: background-color .3s;
+  background-color: #fdd;
+  border: 1px solid #a00;
+  border-radius: 4px;
+  padding: .4rem .8rem;
+  font-size: .9rem;
 }
 
-.productDetail-module__2sF0gG__ratingContainer button:hover {
-  background-color: #e65c5c;
+.productDetail-module__2sF0gG__deleteRatingBtn:hover {
+  background-color:  #ffcfcf;
 }
 
 .productDetail-module__2sF0gG__pujarBtn {
@@ -94,17 +93,81 @@
 }
 
 .productDetail-module__2sF0gG__comentariosContainer {
+  background-color: #fafafa;
   border-top: 1px solid #ddd;
+  border-radius: 10px;
   margin-top: 40px;
   padding: 20px;
 }
 
+.productDetail-module__2sF0gG__comentariosContainer h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
 .productDetail-module__2sF0gG__comentarioBox {
-  background: #fefefe;
+  background: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
   margin-bottom: 15px;
   padding: 15px;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.productDetail-module__2sF0gG__comentarioBox h4 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.productDetail-module__2sF0gG__comentarioBox p {
+  margin-bottom: 6px;
+}
+
+.productDetail-module__2sF0gG__comentarioBox button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: background-color .3s;
+}
+
+.productDetail-module__2sF0gG__comentarioBox button:hover {
+  background-color: #0056b3;
+}
+
+.productDetail-module__2sF0gG__commentForm {
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.productDetail-module__2sF0gG__commentForm input[type="text"], .productDetail-module__2sF0gG__commentForm textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.productDetail-module__2sF0gG__commentForm button[type="submit"] {
+  color: #fff;
+  cursor: pointer;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  padding: .6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.productDetail-module__2sF0gG__commentForm button[type="submit"]:hover {
+  background-color: #218838;
 }
 
 /*# sourceMappingURL=pages_productDetail_module_css_2bef753f._.single.css.map*/

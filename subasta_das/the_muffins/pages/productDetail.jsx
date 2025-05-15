@@ -127,7 +127,7 @@ const ProductDetail = () => {
     const handleRatingChange = async (e) => {
         const newRating = parseInt(e.target.value);
         if (accessToken) {
-            await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -135,10 +135,18 @@ const ProductDetail = () => {
                 },
                 body: JSON.stringify({ score: newRating })
             });
-            setUserRating(newRating);
-            router.reload(); // recargar para ver la media actualizada
+
+            if (response.ok) {
+                const data = await response.json();
+                setUserRating(data.score);
+                setProducto(prev => ({
+                    ...prev,
+                    average_rating: data.average_rating
+                }));
+            }
         }
     };
+
     
     const handleDeleteRating = async () => {
         await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
@@ -158,7 +166,8 @@ const ProductDetail = () => {
                     const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`);
                     if (response.ok) {
                         const data = await response.json();
-                        setComentarios(data);
+                        setComentarios(Array.isArray(data) ? data : data.results || []);
+
                     }
                 } catch (error) {
                     console.error("Error al cargar comentarios:", error);
@@ -199,7 +208,7 @@ const ProductDetail = () => {
     
     const handleGuardarEdicion = async () => {
         try {
-            const response = await fetch(`http://127.0.0.1:8000/comentarios/${comentarioEditado.id}/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/comentarios/${comentarioEditado.id}/`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -300,22 +309,29 @@ const ProductDetail = () => {
 
                                 <p><strong>Valoración media:</strong> {producto.average_rating}</p>
 
+                                 <p><strong>Valoración media:</strong> {producto.average_rating}</p>
+
                                 {accessToken && (
-                                    <div className={styles.ratingContainer}>
-                                        <label>Tu puntuación:</label>
-                                        <select value={userRating || ''} onChange={handleRatingChange}>
-                                            <option value="">Selecciona</option>
-                                            {[1, 2, 3, 4, 5].map(n => (
-                                                <option key={n} value={n}>{n}</option>
-                                            ))}
-                                        </select>
-                                        {userRating && (
-                                            <button onClick={handleDeleteRating}>
-                                                Eliminar puntuación
-                                            </button>
-                                        )}
+                                    <div className={styles.ratingSection}>
+                                        <p><strong>Tu puntuación:</strong></p>
+                                        <div className={styles.ratingControls}>
+                                            <select value={userRating || ''} onChange={handleRatingChange}>
+                                                <option value="">Selecciona una puntuación</option>
+                                                {[1, 2, 3, 4, 5].map(n => (
+                                                    <option key={n} value={n}>{'⭐'.repeat(n)}</option>
+                                                ))}
+                                            </select>
+
+                                            {userRating !== null && userRating !== undefined && (
+                                                <button onClick={handleDeleteRating} className={styles.deleteRatingBtn}>
+                                                    Eliminar puntuación
+                                                </button>
+                                            )}
+
+                                        </div>
                                     </div>
                                 )}
+
                             </div>
 
                             <button
