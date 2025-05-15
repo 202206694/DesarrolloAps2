@@ -1,26 +1,26 @@
 /* [project]/components/header.module.css [client] (css) */
 .header-module__bY5_QG__header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  background-color: #fff;
-  padding: 10px 20px;
-  position: relative;
   z-index: 1000;
+  background-color: #fff;
+  align-items: center;
+  height: 80px;
+  padding: 10px 20px;
+  display: flex;
+  position: relative;
 }
 
 .header-module__bY5_QG__sideMenu {
+  z-index: 1000;
+  background-color: #fff;
+  width: 300px;
+  height: 100vh;
+  padding: 20px;
+  transition: transform .3s ease-in-out;
   position: fixed;
   top: 0;
   left: 0;
-  width: 300px;
-  height: 100vh;
-  background-color: #fff;
-  box-shadow: 2px 0 5px #0003;
   transform: translateX(-100%);
-  transition: transform .3s ease-in-out;
-  z-index: 1000;
-  padding: 20px;
+  box-shadow: 2px 0 5px #0003;
 }
 
 .header-module__bY5_QG__sideMenu.header-module__bY5_QG__open {
@@ -28,16 +28,16 @@
 }
 
 .header-module__bY5_QG__sideMenu button {
+  text-align: left;
+  cursor: pointer;
   background-color: #fff;
   border: none;
-  padding: 10px 15px;
-  margin: 5px 0;
-  width: 100%;
-  text-align: left;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color .3s ease-in-out, transform .1s ease-in-out;
   border-radius: 5px;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px 15px;
+  font-size: 16px;
+  transition: background-color .3s ease-in-out, transform .1s ease-in-out;
 }
 
 .header-module__bY5_QG__sideMenu button:hover {
@@ -46,44 +46,44 @@
 }
 
 .header-module__bY5_QG__menuContent {
-  display: flex;
   flex-direction: column;
   gap: 10px;
+  display: flex;
 }
 
 .header-module__bY5_QG__closeBtn {
-  align-self: flex-end;
+  cursor: pointer;
   background: none;
   border: none;
+  align-self: flex-end;
   font-size: 24px;
-  cursor: pointer;
 }
 
 .header-module__bY5_QG__nav {
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .header-module__bY5_QG__navLeft, .header-module__bY5_QG__navCenter, .header-module__bY5_QG__navRight {
-  display: flex;
   align-items: center;
+  display: flex;
 }
 
 .header-module__bY5_QG__navCenter {
   flex: 1;
-  display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
 .header-module__bY5_QG__logo {
-  max-height: 80px;
   width: auto;
+  max-height: 80px;
 }
 
 .header-module__bY5_QG__navRight {
@@ -92,33 +92,33 @@
 }
 
 .header-module__bY5_QG__searchContainer {
-  display: inline-block;
   align-items: center;
-  position: relative;
   margin-left: 150px;
+  display: inline-block;
+  position: relative;
 }
 
 .header-module__bY5_QG__searchIcon {
   cursor: pointer;
+  z-index: 10;
   font-size: 20px;
   position: relative;
-  z-index: 10;
 }
 
 .header-module__bY5_QG__searchModal {
+  z-index: 100;
+  background: #fff;
+  border-radius: 5px;
+  align-items: center;
+  gap: 10px;
+  min-width: 200px;
+  padding: 10px;
+  display: flex;
   position: absolute;
   top: 50%;
   left: -237px;
   transform: translateY(-50%);
-  background: #fff;
-  padding: 10px;
-  border-radius: 5px;
   box-shadow: 0 4px 6px #0000001a;
-  z-index: 100;
-  min-width: 200px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
 .header-module__bY5_QG__hidden {
@@ -126,21 +126,21 @@
 }
 
 .header-module__bY5_QG__navList {
-  list-style: none;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  list-style: none;
   display: flex;
-  justify-content: flex-end;
 }
 
 .header-module__bY5_QG__navItem, .header-module__bY5_QG__menuIcon {
+  cursor: pointer;
   background-color: #fff;
   border: none;
+  border-radius: 5px;
   padding: 8px 12px;
   font-size: 16px;
-  cursor: pointer;
   transition: background-color .3s ease-in-out, transform .1s ease-in-out;
-  border-radius: 5px;
 }
 
 .header-module__bY5_QG__navItem:hover, .header-module__bY5_QG__menuIcon:hover {
@@ -149,10 +149,10 @@
 }
 
 .header-module__bY5_QG__navLink {
-  text-decoration: none;
   color: #000;
-  font-size: 15px;
   padding: 10px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .header-module__bY5_QG__navLink:hover {
@@ -162,43 +162,174 @@
 
 /* [project]/pages/productDetail.module.css [client] (css) */
 .productDetail-module__2sF0gG__detalleContainer {
-  display: flex;
-  align-items: center;
+  background: #fff;
+  border-radius: 10px;
   justify-content: center;
-  padding: 40px;
+  align-items: center;
   gap: 40px;
   max-width: 1000px;
   margin: auto;
-  background: #fff;
+  padding: 40px;
+  display: flex;
   box-shadow: 0 4px 10px #0000001a;
-  border-radius: 10px;
 }
 
 .productDetail-module__2sF0gG__productoImagenContainer {
-  flex: 1;
   text-align: center;
+  flex: 1;
 }
 
 .productDetail-module__2sF0gG__productoImagenContainer img {
+  border-radius: 10px;
   width: 100%;
   max-width: 450px;
-  border-radius: 10px;
   box-shadow: 0 4px 10px #0003;
 }
 
 .productDetail-module__2sF0gG__detalleInfo {
-  flex: 1;
   text-align: left;
+  flex: 1;
 }
 
 .productDetail-module__2sF0gG__detalleInfo h1 {
-  font-size: 32px;
   margin-bottom: 10px;
+  font-size: 32px;
 }
 
 .productDetail-module__2sF0gG__detalleInfo p {
-  font-size: 18px;
   margin: 8px 0;
+  font-size: 18px;
+}
+
+.productDetail-module__2sF0gG__ratingSection {
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  margin-top: 1rem;
+  padding: 1rem;
+  display: inline-block;
+}
+
+.productDetail-module__2sF0gG__ratingControls {
+  align-items: center;
+  gap: .8rem;
+  margin-top: .5rem;
+  display: flex;
+}
+
+.productDetail-module__2sF0gG__ratingControls select {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .4rem;
+  font-size: 1rem;
+}
+
+.productDetail-module__2sF0gG__deleteRatingBtn {
+  color: #a00;
+  cursor: pointer;
+  background-color: #fdd;
+  border: 1px solid #a00;
+  border-radius: 4px;
+  padding: .4rem .8rem;
+  font-size: .9rem;
+}
+
+.productDetail-module__2sF0gG__deleteRatingBtn:hover {
+  background-color:  #ffcfcf;
+}
+
+.productDetail-module__2sF0gG__pujarBtn {
+  color: #fff;
+  cursor: pointer;
+  background-color: #0070f3;
+  border: none;
+  border-radius: 8px;
+  margin-top: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.productDetail-module__2sF0gG__pujarBtn:hover {
+  background-color: #0059c1;
+}
+
+.productDetail-module__2sF0gG__comentariosContainer {
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.productDetail-module__2sF0gG__comentariosContainer h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.productDetail-module__2sF0gG__comentarioBox {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  padding: 15px;
+  box-shadow: 0 2px 5px #0000000d;
+}
+
+.productDetail-module__2sF0gG__comentarioBox h4 {
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+.productDetail-module__2sF0gG__comentarioBox p {
+  margin-bottom: 6px;
+}
+
+.productDetail-module__2sF0gG__comentarioBox button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  transition: background-color .3s;
+}
+
+.productDetail-module__2sF0gG__comentarioBox button:hover {
+  background-color: #0056b3;
+}
+
+.productDetail-module__2sF0gG__commentForm {
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.productDetail-module__2sF0gG__commentForm input[type="text"], .productDetail-module__2sF0gG__commentForm textarea {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.productDetail-module__2sF0gG__commentForm button[type="submit"] {
+  color: #fff;
+  cursor: pointer;
+  background-color: #28a745;
+  border: none;
+  border-radius: 6px;
+  padding: .6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color .3s;
+}
+
+.productDetail-module__2sF0gG__commentForm button[type="submit"]:hover {
+  background-color: #218838;
 }
 
 

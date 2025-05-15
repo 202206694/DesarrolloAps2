@@ -84,7 +84,7 @@ const CreateAuction = () => {
         }
 
         try {
-            const res = await fetch('https://backend-the-muffins.onrender.com/subastas/', {
+            const res = await fetch('http://127.0.0.1:8000/subastas/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -95,6 +95,8 @@ const CreateAuction = () => {
 
             if (!res.ok) {
                 const errorData = await res.json();
+                console.log("🛑 Error data recibido:", errorData);
+
                 if (errorData.closing_date) {
                     setError(errorData.closing_date[0]);
                 } else {

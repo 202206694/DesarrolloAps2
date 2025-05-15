@@ -510,13 +510,12 @@ function Header() {
     const [menuOpen, setMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [searchModalOpen, setSearchModalOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
     const [searchTerm, setSearchTerm] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])('');
-    const [isAuthenticated, setIsAuthenticated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [isAuthenticated, setIsAuthenticated] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useState"])(null); // null = no evaluado aún
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$index$2e$js__$5b$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Header.useEffect": ()=>{
-            // Aseguramos que se ejecute solo en cliente
             if ("TURBOPACK compile-time truthy", 1) {
                 const token = localStorage.getItem('accessToken');
-                setIsAuthenticated(!!token);
+                setIsAuthenticated(!!token && token !== 'undefined');
             }
         }
     }["Header.useEffect"], []);
@@ -545,12 +544,12 @@ function Header() {
                             children: "☰ Menú"
                         }, void 0, false, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 39,
+                            lineNumber: 37,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/header.js",
-                        lineNumber: 38,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -564,86 +563,146 @@ function Header() {
                                 className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].logo
                             }, void 0, false, {
                                 fileName: "[project]/components/header.js",
-                                lineNumber: 43,
+                                lineNumber: 42,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 42,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/header.js",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].navRight,
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchContainer,
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchIcon,
-                                    onClick: toggleSearchModal,
-                                    children: "🔍"
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 48,
-                                    columnNumber: 13
-                                }, this),
-                                searchModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchModal,
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
-                                        onSubmit: handleSearchSubmit,
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                                type: "text",
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchInput,
-                                                placeholder: "Buscar productos...",
-                                                value: searchTerm,
-                                                onChange: handleSearchChange
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/header.js",
-                                                lineNumber: 52,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "submit",
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchBtn,
-                                                children: "🔎"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/header.js",
-                                                lineNumber: 59,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                type: "button",
-                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].closeBtn,
-                                                onClick: toggleSearchModal,
-                                                children: "✕"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/header.js",
-                                                lineNumber: 60,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchContainer,
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchIcon,
+                                        onClick: toggleSearchModal,
+                                        children: "🔍"
+                                    }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 51,
+                                        lineNumber: 48,
+                                        columnNumber: 13
+                                    }, this),
+                                    searchModalOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchModal,
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                            onSubmit: handleSearchSubmit,
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                                    type: "text",
+                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchInput,
+                                                    placeholder: "Buscar productos...",
+                                                    value: searchTerm,
+                                                    onChange: handleSearchChange
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/header.js",
+                                                    lineNumber: 52,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "submit",
+                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].searchBtn,
+                                                    children: "🔎"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/header.js",
+                                                    lineNumber: 59,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    type: "button",
+                                                    className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].closeBtn,
+                                                    onClick: toggleSearchModal,
+                                                    children: "✕"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/header.js",
+                                                    lineNumber: 60,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/header.js",
+                                            lineNumber: 51,
+                                            columnNumber: 17
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/header.js",
+                                        lineNumber: 50,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/header.js",
+                                lineNumber: 47,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].navList,
+                                children: isAuthenticated === null ? null : isAuthenticated ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/perfilUsuario",
+                                    passHref: true,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].navItem,
+                                        children: "Mi Perfil"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/header.js",
+                                        lineNumber: 69,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 50,
+                                    lineNumber: 68,
                                     columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/components/header.js",
-                            lineNumber: 47,
-                            columnNumber: 11
-                        }, this)
-                    }, void 0, false, {
+                                }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/login",
+                                            passHref: true,
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].navItem,
+                                                children: "Iniciar Sesión"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/header.js",
+                                                lineNumber: 74,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/header.js",
+                                            lineNumber: 73,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/registro",
+                                            passHref: true,
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                className: __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$header$2e$module$2e$css__$5b$client$5d$__$28$css__module$29$__["default"].navItem,
+                                                children: "Registrarse"
+                                            }, void 0, false, {
+                                                fileName: "[project]/components/header.js",
+                                                lineNumber: 77,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/header.js",
+                                            lineNumber: 76,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true)
+                            }, void 0, false, {
+                                fileName: "[project]/components/header.js",
+                                lineNumber: 66,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
                         fileName: "[project]/components/header.js",
                         lineNumber: 46,
                         columnNumber: 9
@@ -651,7 +710,7 @@ function Header() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/header.js",
-                lineNumber: 37,
+                lineNumber: 35,
                 columnNumber: 7
             }, this),
             menuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -665,59 +724,14 @@ function Header() {
                             children: "✕"
                         }, void 0, false, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 71,
+                            lineNumber: 88,
                             columnNumber: 13
-                        }, this),
-                        !isAuthenticated ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/login",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "Iniciar Sesión"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 76,
-                                        columnNumber: 37
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 76,
-                                    columnNumber: 17
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/registro",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "Registrarse"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 77,
-                                        columnNumber: 40
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 77,
-                                    columnNumber: 17
-                                }, this)
-                            ]
-                        }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/perfilUsuario",
-                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                children: "Mi Perfil"
-                            }, void 0, false, {
-                                fileName: "[project]/components/header.js",
-                                lineNumber: 80,
-                                columnNumber: 43
-                            }, this)
-                        }, void 0, false, {
-                            fileName: "[project]/components/header.js",
-                            lineNumber: 80,
-                            columnNumber: 15
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             children: "COLECCIONES"
                         }, void 0, false, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 83,
+                            lineNumber: 90,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -728,12 +742,12 @@ function Header() {
                                         children: "Todo"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 85,
+                                        lineNumber: 92,
                                         columnNumber: 38
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 85,
+                                    lineNumber: 92,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -742,12 +756,12 @@ function Header() {
                                         children: "Anillos"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 86,
+                                        lineNumber: 93,
                                         columnNumber: 56
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 86,
+                                    lineNumber: 93,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -756,12 +770,12 @@ function Header() {
                                         children: "Collares"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 87,
+                                        lineNumber: 94,
                                         columnNumber: 57
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 87,
+                                    lineNumber: 94,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -770,12 +784,12 @@ function Header() {
                                         children: "Pulseras"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 88,
+                                        lineNumber: 95,
                                         columnNumber: 57
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 88,
+                                    lineNumber: 95,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -784,12 +798,12 @@ function Header() {
                                         children: "Pendientes"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 89,
+                                        lineNumber: 96,
                                         columnNumber: 59
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 89,
+                                    lineNumber: 96,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -798,12 +812,12 @@ function Header() {
                                         children: "Relojes"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 90,
+                                        lineNumber: 97,
                                         columnNumber: 56
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 90,
+                                    lineNumber: 97,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
@@ -813,124 +827,96 @@ function Header() {
                                         children: "Crear Subasta"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 91,
+                                        lineNumber: 98,
                                         columnNumber: 43
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 91,
+                                    lineNumber: 98,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 84,
+                            lineNumber: 91,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                             children: "FILTRAR POR PRECIO"
                         }, void 0, false, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 94,
+                            lineNumber: 101,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?precioMin=0&precioMax=50",
+                                    href: "/products?price_range=under_100",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "Hasta 50 €"
+                                        children: "Menos de 100 €"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 96,
-                                        columnNumber: 63
+                                        lineNumber: 103,
+                                        columnNumber: 60
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 96,
+                                    lineNumber: 103,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?precioMin=50&precioMax=100",
+                                    href: "/products?price_range=between_100_1000",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "50 € - 100 €"
+                                        children: "100 € - 1000 €"
                                     }, void 0, false, {
                                         fileName: "[project]/components/header.js",
-                                        lineNumber: 97,
-                                        columnNumber: 65
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 97,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?precioMin=100&precioMax=250",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "100 € - 250 €"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 98,
-                                        columnNumber: 66
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 98,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?precioMin=250&precioMax=500",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "250 € - 500 €"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 99,
-                                        columnNumber: 66
-                                    }, this)
-                                }, void 0, false, {
-                                    fileName: "[project]/components/header.js",
-                                    lineNumber: 99,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
-                                    href: "/products?precioMin=500&precioMax=1000",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                        children: "Más de 500 €"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/header.js",
-                                        lineNumber: 100,
+                                        lineNumber: 104,
                                         columnNumber: 67
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/header.js",
-                                    lineNumber: 100,
+                                    lineNumber: 104,
+                                    columnNumber: 15
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$client$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/products?price_range=over_1000",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                        children: "Más de 1000 €"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/header.js",
+                                        lineNumber: 105,
+                                        columnNumber: 60
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/components/header.js",
+                                    lineNumber: 105,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/header.js",
-                            lineNumber: 95,
+                            lineNumber: 102,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/header.js",
-                    lineNumber: 70,
+                    lineNumber: 87,
                     columnNumber: 11
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/header.js",
-                lineNumber: 69,
+                lineNumber: 86,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/header.js",
-        lineNumber: 36,
+        lineNumber: 34,
         columnNumber: 5
     }, this);
 }
-_s(Header, "2LF3amKwwj830lxu3w/G2gEpnJA=");
+_s(Header, "mA1bvpJHFZB4xdhBmySk7sz8dgU=");
 _c = Header;
 var _c;
 __turbopack_context__.k.register(_c, "Header");
@@ -998,7 +984,7 @@ const SearchPage = ()=>{
                     }
                     setLoading(true); // aseguramos que loading se activa al empezar
                     try {
-                        const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/?search=${encodeURIComponent(query)}`);
+                        const response = await fetch(`http://127.0.0.1:8000/subastas/?search=${encodeURIComponent(query)}`);
                         if (!response.ok) {
                             throw new Error('No se pudo cargar los productos');
                         }

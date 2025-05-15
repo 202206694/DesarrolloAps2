@@ -9,11 +9,13 @@ export default function Header() {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false); // ✅ nuevo flag
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('accessToken');
-      setIsAuthenticated(!!token);
+      setIsAuthenticated(!!token && token !== 'undefined' && token !== 'null');
+      setAuthChecked(true); // ✅ ahora sí sabemos si hay token
     }
   }, []);
 
@@ -64,7 +66,11 @@ export default function Header() {
           </div>
 
           <div className={styles.navList}>
-            {!isAuthenticated ? (
+            {!authChecked ? null : isAuthenticated ? (
+              <Link href="/perfilUsuario" passHref>
+                <button className={styles.navItem}>Mi Perfil</button>
+              </Link>
+            ) : (
               <>
                 <Link href="/login" passHref>
                   <button className={styles.navItem}>Iniciar Sesión</button>
@@ -73,10 +79,6 @@ export default function Header() {
                   <button className={styles.navItem}>Registrarse</button>
                 </Link>
               </>
-            ) : (
-              <Link href="/perfilUsuario" passHref>
-                <button className={styles.navItem}>Mi Perfil</button>
-              </Link>
             )}
           </div>
         </div>
@@ -100,12 +102,10 @@ export default function Header() {
 
             <h2>FILTRAR POR PRECIO</h2>
             <div>
-            <Link href="/products?price_range=under_100"><button>Menos de 100 €</button></Link>
-            <Link href="/products?price_range=between_100_1000"><button>100 € - 1000 €</button></Link>
-            <Link href="/products?price_range=over_1000"><button>Más de 1000 €</button></Link>
-
+              <Link href="/products?price_range=under_100"><button>Menos de 100 €</button></Link>
+              <Link href="/products?price_range=between_100_1000"><button>100 € - 1000 €</button></Link>
+              <Link href="/products?price_range=over_1000"><button>Más de 1000 €</button></Link>
             </div>
-
           </div>
         </div>
       )}
