@@ -26,7 +26,7 @@ const ProductDetail = () => {
         if (id) {
             const fetchProduct = async () => {
                 try {
-                    const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/`);
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/`);
                     if (!response.ok) throw new Error("Producto no encontrado");
 
                     const data = await response.json();
@@ -44,7 +44,7 @@ const ProductDetail = () => {
         if (id && showPujas) {
             const fetchPujas = async () => {
                 try {
-                    const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/pujas/`);
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/pujas/`);
                     if (!response.ok) throw new Error("No se encontraron pujas");
 
                     const data = await response.json();
@@ -82,7 +82,7 @@ const ProductDetail = () => {
         }
 
         try {
-            const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/pujas/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/pujas/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -110,7 +110,7 @@ const ProductDetail = () => {
     useEffect(() => {
         const fetchUserRating = async () => {
             if (accessToken && id) {
-                const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/rating/`, {
+                const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
                     headers: {
                         'Authorization': `Bearer ${accessToken}`,
                     }
@@ -127,7 +127,7 @@ const ProductDetail = () => {
     const handleRatingChange = async (e) => {
         const newRating = parseInt(e.target.value);
         if (accessToken) {
-            const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/rating/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -149,7 +149,7 @@ const ProductDetail = () => {
 
     
     const handleDeleteRating = async () => {
-        await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/rating/`, {
+        await fetch(`http://127.0.0.1:8000/subastas/${id}/rating/`, {
             method: "DELETE",
             headers: {
                 'Authorization': `Bearer ${accessToken}`
@@ -163,7 +163,7 @@ const ProductDetail = () => {
         if (id) {
             const fetchComentarios = async () => {
                 try {
-                    const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/comentarios/`);
+                    const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`);
                     if (response.ok) {
                         const data = await response.json();
                         setComentarios(Array.isArray(data) ? data : data.results || []);
@@ -184,7 +184,7 @@ const ProductDetail = () => {
     const handleSubmitComentario = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/comentarios/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/comentarios/`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -208,7 +208,7 @@ const ProductDetail = () => {
     
     const handleGuardarEdicion = async () => {
         try {
-            const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/comentarios/${comentarioEditado.id}/`, {
+            const response = await fetch(`http://127.0.0.1:8000/subastas/comentarios/${comentarioEditado.id}/`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -228,7 +228,7 @@ const ProductDetail = () => {
     
     const handleEliminarComentario = async (idComentario) => {
         try {
-            await fetch(`https://backend-the-muffins.onrender.com/comentarios/${idComentario}/`, {
+            await fetch(`http://127.0.0.1:8000/comentarios/${idComentario}/`, {
                 method: "DELETE",
                 headers: {
                     Authorization: `Bearer ${accessToken}`

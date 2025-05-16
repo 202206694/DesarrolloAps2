@@ -10,7 +10,7 @@ const Pujas = () => {
     useEffect(() => {
         const fetchPujas = async () => {
             try {
-                const response = await fetch(`https://backend-the-muffins.onrender.com/subastas/${id}/pujas/`);
+                const response = await fetch(`http://127.0.0.1:8000/subastas/${id}/pujas/`);
                 if (!response.ok) throw new Error('Error al obtener las pujas');
                 const data = await response.json();
                 setPujas(data.results);

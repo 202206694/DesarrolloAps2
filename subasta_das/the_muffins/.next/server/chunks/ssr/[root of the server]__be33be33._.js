@@ -620,7 +620,7 @@ const CreateAuction = ()=>{
         setAccessToken(token);
         const fetchCategories = async ()=>{
             try {
-                const res = await fetch('https://backend-the-muffins.onrender.com/subastas/categorias/');
+                const res = await fetch('http://127.0.0.1:8000/subastas/categorias/');
                 const data = await res.json();
                 setCategories(data.results);
                 const map = {};
